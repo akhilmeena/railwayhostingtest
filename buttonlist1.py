@@ -4,6 +4,7 @@ from flask import Flask, request
 import re
 import telebot
 from telebot import types
+import random
 
 TOKEN = "1221370836:AAGzjvpt18Dvw2vw5hsbxE0fQS6q_1_NveY"
 bot = telebot.TeleBot(token=TOKEN)
@@ -20,6 +21,21 @@ def send_welcome(m):
 
 id_a = [818396979 ,608824855]
 
+@bot.message_handler(commands=['start'])
+def test(m):
+  name = m.from_user.first_name
+  user_id = m.from_user.username
+  keyboard = types.InlineKeyboardMarkup()
+  #num1 = random.randint(0, 9)
+  #numvr =  num1
+  #callll = types.InlineKeyboardButton(text= f"☺️ ( {numvr} )", callback_data=".")
+  callback_btn1 = types.InlineKeyboardButton(text=" without pic ", callback_data="text")
+  callback_btn2 = types.InlineKeyboardButton(text=" with pic ", callback_data="pic")
+  #keyboard.add(callll)
+  keyboard.add(callback_btn1)
+  keyboard.add(callback_btn2)
+  #bot.send_message(m.chat.id,text=num1)
+  bot.send_message(m.chat.id,text="<b>Hey 😀   </b>" +  f'<code>{name}</code>' + f'(@{user_id})' + " <b>  how you want to send post</b>",reply_markup=keyboard,parse_mode="HTML")
 
 
 @server.route('/' + TOKEN, methods=['POST'])
