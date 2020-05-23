@@ -1,1 +1,1 @@
-web: python Shayari.py
+web: python shayari.py
