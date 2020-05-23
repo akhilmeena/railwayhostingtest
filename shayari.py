@@ -17,7 +17,7 @@ class User:
     def __init__(self, header):
         self.header = header
         self.pic = pic
-        hn
+        
         
         
 @bot.message_handler(commands=['start'])
@@ -156,7 +156,7 @@ def post_w(m):
   
   
 
-@server.route('/' + "1221370836:AAGzjvpt18Dvw2vw5hsbxE0fQS6q_1_NveY", methods=['POST'])
+@server.route('/' + TOKEN , methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
