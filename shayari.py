@@ -155,19 +155,19 @@ def post_w(m):
   bot.send_message(m.chat.id,text="<b>shayari posted to.channel, now post new shayari</b>" , reply_markup=keybo,parse_mode="HTML")	
   
   
-@server.route('/' + TOKEN, methods=['POST'])
+
+@server.route('/' + "1221370836:AAGzjvpt18Dvw2vw5hsbxE0fQS6q_1_NveY", methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
- 
- 
+
+
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://shayarib.herokuapp.com/' + "1221370836:AAGzjvpt18Dvw2vw5hsbxE0fQS6q_1_NveY")
+    bot.set_webhook(url='https://shayarib.com/' + "1221370836:AAGzjvpt18Dvw2vw5hsbxE0fQS6q_1_NveY")
     return "!", 200
- 
- 
- 
+
+
 if __name__ == "__main__":
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
