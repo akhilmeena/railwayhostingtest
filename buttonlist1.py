@@ -1,9 +1,18 @@
+import telebot
 import os
-import time
+import requests
 from flask import Flask, request
 import re
 import telebot
 from telebot import types
+import requests
+from bs4 import BeautifulSoup
+import html5lib
+import urllib , urllib.request, http.cookiejar
+from PIL import Image , ImageDraw, ImageFont
+from io import BytesIO
+import datetime
+import calendar
 import random
 from translate import Translator
 #from googletrans import Translator
@@ -12,6 +21,7 @@ from langdetect import detect
 TOKEN = "1221370836:AAGzjvpt18Dvw2vw5hsbxE0fQS6q_1_NveY"
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
+
 
 user_dict = {}
 class User:
@@ -180,7 +190,7 @@ def post_w(m):
   bot.send_photo(chat_id = "-1001433305014", photo = pic_id, caption = f"<b>{User.capet}</b>" + "\n\n<b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode="HTML" )
   bot.send_photo(m.chat.id, photo = pic_id, caption = f"<b>{User.capet}</b>" + "\n\n<b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode="HTML" )
   bot.send_message(m.chat.id,text="<b>shayari posted to.channel, now post new shayari</b>" , reply_markup=keybo,parse_mode="HTML")	
-
+ 
 
 
 @server.route('/' + TOKEN, methods=['POST'])
