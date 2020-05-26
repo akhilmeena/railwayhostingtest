@@ -15,7 +15,6 @@ import datetime
 import calendar
 import random
 from translate import Translator
-#from googletrans import Translator
 from langdetect import detect
 
 TOKEN = "1221370836:AAGzjvpt18Dvw2vw5hsbxE0fQS6q_1_NveY"
