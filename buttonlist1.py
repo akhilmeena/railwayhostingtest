@@ -89,6 +89,9 @@ def callback_inline(call):
 
 
 def text_sh(m):
+  text=m.text
+  akhil = detect(text)
+  lan=akhil
   name = m.from_user.first_name
   user_id = m.from_user.username
   User.header = m.text
@@ -118,8 +121,14 @@ def text_sh(m):
   keybo.add(callback_btn1)
   keybo.add(callback_btn2)
   bot.forward_message(chat_id = "-1001433305014", from_chat_id = "-1001163396707", message_id = "7")
-  bot.send_message(chat_id = "-1001433305014",text= f"<b>{User.header}</b>" + "\n\n <b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode = "HTML")
-  bot.send_message(m.chat.id,text= f"<b>{User.header}</b>" + "\n\n <b>@Shayari_Dil_Se_K\n💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})' ,reply_markup=keyboard, parse_mode = "HTML")
+  if lan =='hi':
+    bot.send_message(chat_id = "-1001433305014",text= f"<b>{User.header}</b>" + "\n\n <b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode = "HTML")
+    bot.send_message(m.chat.id,text= f"<b>{User.header}</b>" + "\n\n <b>@Shayari_Dil_Se_K\n💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})' ,reply_markup=keyboard, parse_mode = "HTML")
+  else:
+    translator= Translator(from_lang=lan , to_lang="hi")
+    translation = translator.translate(text)
+    bot.send_message(chat_id = "-1001433305014",text= f"<b>{User.header}</b>" + "\n\n<b>📝 Translate in Hindi:</b>" + "\n" + f"<code>{translation}</code>" + "\n\n <b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode = "HTML")
+    bot.send_message(m.chat.id,text= f"<b>{User.header}</b>" + "\n\n<b>📝 Translate in Hindi:</b>" + "\n" + f"<code>{translation}</code>" + "\n\n <b>@Shayari_Dil_Se_K\n💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})' ,reply_markup=keyboard, parse_mode = "HTML")
   bot.send_message(m.chat.id,text="<b>shayari posted to channel , now post new shayari</b>",reply_markup=keybo,parse_mode="HTML")
 
 def pic_send(m):
