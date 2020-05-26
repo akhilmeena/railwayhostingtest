@@ -166,9 +166,10 @@ def post_w(m):
   keybo.add(callback_btn2)
   bot.forward_message(chat_id = "-1001433305014", from_chat_id = "-1001163396707", message_id = "7")
   bot.send_photo(chat_id = "-1001433305014", photo = pic_id, caption = f"<b>{User.capet}</b>" + "\n\n<b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode="HTML" )
-  bot.send_photo(chat_id = call.message.chat.id, photo = pic_id, caption = f"<b>{User.capet}</b>" + "\n\n<b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode="HTML" )
+  bot.send_photo(m.chat.id, photo = pic_id, caption = f"<b>{User.capet}</b>" + "\n\n<b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode="HTML" )
   bot.send_message(m.chat.id,text="<b>shayari posted to.channel, now post new shayari</b>" , reply_markup=keybo,parse_mode="HTML")	
- 
+
+
 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
