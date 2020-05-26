@@ -7,7 +7,7 @@ import telebot
 from telebot import types
 import random
 #from translate import Translator
-#from langdetect import detect
+from langdetect import detect
 
 TOKEN = "1221370836:AAGzjvpt18Dvw2vw5hsbxE0fQS6q_1_NveY"
 bot = telebot.TeleBot(token=TOKEN)
