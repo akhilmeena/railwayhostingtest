@@ -4,6 +4,7 @@ from flask import Flask, request
 import re
 import telebot
 from telebot import types
+import random
 from translate import Translator
 #from googletrans import Translator
 from langdetect import detect
