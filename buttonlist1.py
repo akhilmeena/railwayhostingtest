@@ -1,19 +1,9 @@
-import telebot
 import os
 import requests
 from flask import Flask, request
 import re
 import telebot
 from telebot import types
-import requests
-from bs4 import BeautifulSoup
-import html5lib
-import urllib , urllib.request, http.cookiejar
-from PIL import Image , ImageDraw, ImageFont
-from io import BytesIO
-import datetime
-import calendar
-import random
 from translate import Translator
 #from googletrans import Translator
 from langdetect import detect
