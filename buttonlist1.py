@@ -2,6 +2,7 @@ import os
 import requests
 from flask import Flask, request
 import re
+import time
 import telebot
 from telebot import types
 import random
@@ -131,10 +132,52 @@ def text_sh(m):
     bot.send_message(m.chat.id,text= f"<b>{User.header}</b>" + "\n\n <b>@Shayari_Dil_Se_K\n💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})' ,reply_markup=keyboard, parse_mode = "HTML")
   else:
     translator= Translator(from_lang=lan , to_lang="hi")
+    msg = bot.send_message(m.chat.id,text="<b>Language is detecting...... ◜</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◝</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◞</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◟</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◜</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◝</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◞</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◟</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◜</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◝</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◞</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◟</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◜</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◝</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◞</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◟</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◜</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◝</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◞</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◟</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◜</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◝</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◞</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◟</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◜</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◝</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◞</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◟</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language is detecting...... ◜</b>",parse_mode="HTML")
+    msg = bot.edit_message_text(chat_id=m.chat.id, message_id=msg.message_id,text="<b>Language detected ...... ⊙</b>",parse_mode="HTML")
     translation = translator.translate(text)
+    msg1 = bot.send_message(m.chat.id,' <b>Text is Translating..... ⏳ </b>', parse_mode= "HTML")
+    msg2 = bot.edit_message_text(chat_id=m.chat.id, message_id=msg1.message_id, text='<b>PROGRESS ▓▓▓▓▓▓▓▓▓▓\n\nText Uploading To server 0 % \n ◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️ \n\nTranslating .... 0 %\n◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️\n\nPosting To Channel 0 %\n ◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️\n\n=================\nTotal taken \n 00:00:00 HRS \n\nElapsed Time \n 00:02:00 HRS</b>',  parse_mode = 'HTML')
+    time.sleep(1)
+    msg3 = bot.edit_message_text(chat_id = m.chat.id, message_id=msg2.message_id, text='<b>PROGRESS ▓▓▓▓▓▓▓▓▓ED\n\nText Uploading To server 20 % \n ◼️◼️◻️◻️◻️◻️◻️◻️◻️◻️ \n\nTranslating .... 10 %\n◼️◻️◻️◻️◻️◻️◻️◻️◻️◻️\n\nPosting To Channel 30 %\n ◼️◼️◼️◻️◻️◻️◻️◻️◻️◻️\n\n=================\nTotal taken \n 00:00:15 HRS \n\nElapsed Time \n 00:01:45 HRS</b>',  parse_mode = 'HTML')
+    msg4 = bot.edit_message_text(chat_id = m.chat.id, message_id=msg3.message_id, text='<b>PROGRESS ▓▓▓▓▓▓▓ETED\n\nText Uploading To server 30 % \n ◼️◼️◼️◻️◻️◻️◻️◻️◻️◻️ \n\nTranslating .... 25 %\n◼️◼️◻️◻️◻️◻️◻️◻️◻️◻️\n\nPosting To Channel 30 %\n ◼️◼️◼️◻️◻️◻️◻️◻️◻️◻️\n\n=================\nTotal taken \n 00:00:28 HRS \n\nElapsed Time \n 00:01:32 HRS</b>',  parse_mode = 'HTML')
+    time.sleep(1)
+    msg5 = bot.edit_message_text(chat_id = m.chat.id, message_id=msg4.message_id, text='<b>PROGRESS ▓▓▓▓▓LETED\n\nText Uploading To server 30 % \n ◼️◼️◼️◻️◻️◻️◻️◻️◻️◻️ \n\nTranslating .... 40 %\n◼️◼️◼️◼️◻️◻️◻️◻️◻️◻️\n\nPosting To Channel 45 %\n ◼️◼️◼️◼️◻️◻️◻️◻️◻️◻️\n\n=================\nTotal taken \n 00:00:58 HRS \n\nElapsed Time \n 00:01:02 HRS</b>',  parse_mode = 'HTML')
+    msg6 = bot.edit_message_text(chat_id = m.chat.id, message_id=msg5.message_id, text='<b>PROGRESS ▓▓▓PLETED\n\nText Uploading To server 50 % \n ◼️◼️◼️◼️◼️◻️◻️◻️◻️◻️ \n\nTranslating .... 70 %\n◼️◼️◼️◼️◼️◼️◼️◻️◻️◻️\n\nPosting To Channel 60 %\n ◼️◼️◼️◼️◼️◼️◻️◻️◻️◻️\n\n=================\nTotal taken \n 00:01:40 HRS \n\nElapsed Time \n 00:00:20 HRS</b>',  parse_mode = 'HTML')
+    time.sleep(1)
+    msg7 = bot.edit_message_text(chat_id = m.chat.id, message_id=msg6.message_id, text='<b>PROGRESS ▓▓MPLETED\n\nText Uploading To server 60 % \n ◼️◼️◼️◼️◼️◼️◻️◻️◻️◻️ \n\nTranslating .... 80 %\n◼️◼️◼️◼️◼️◼️◼️◼️◻️◻️\n\nPosting To Channel 90 %\n ◼️◼️◼️◼️◼️◼️◼️◼️◼️◻️\n\n=================\nTotal taken \n 00:01:50 HRS \n\nElapsed Time \n 00:00:10 HRS</b>',  parse_mode = 'HTML')
+    msg8 = bot.edit_message_text(chat_id = m.chat.id, message_id=msg7.message_id, text='<b>PROGRESS ▓OMPLETED\n\nText Uploading To server 100 % \n ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ \n\nTranslating .... 80 %\n◼️◼️◼️◼️◼️◼️◼️◼️◻️◻️\n\nPosting To Channel 90 %\n ◼️◼️◼️◼️◼️◼️◼️◼️◼️◻️\n\n=================\nTotal taken \n 00:01:53 HRS \n\nElapsed Time \n 00:00:07 HRS</b>',  parse_mode = 'HTML')
+    #bot.edit_message_text(chat_id = m.chat.id, message_id=msg2.message_id, text='<b>PROGRESS COMPLETED\n\nText Uploading To server 100 % \n ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ \n\nTranslating .... 100 %\n◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️\n\nPosting To Channel 100 %\n ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️\n\n=================\nTotal taken \n 00:02:00 HRS \n\nElapsed Time \n 00:00:00 HRS</b>',  arse_mode = 'HTML')
     bot.send_message(chat_id = "-1001433305014",text= f"<b>{User.header}</b>" + "\n\n<b>📝 Translate in Hindi:</b>" + "\n" + f"<code>{translation}</code>" + "\n\n <b>@Shayari_Dil_Se_K\n 💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})',reply_markup=keyboard, parse_mode = "HTML")
     bot.send_message(m.chat.id,text= f"<b>{User.header}</b>" + "\n\n<b>📝 Translate in Hindi:</b>" + "\n" + f"<code>{translation}</code>" + "\n\n <b>@Shayari_Dil_Se_K\n💙💚💛💜🖤💗\n\nCredit: </b>" + f'<code>{name}</code>' + f'(@{user_id})' ,reply_markup=keyboard, parse_mode = "HTML")
-  bot.send_message(m.chat.id,text="<b>shayari posted to channel , now post new shayari</b>",reply_markup=keybo,parse_mode="HTML")
+    bot.edit_message_text(chat_id = m.chat.id, message_id=msg8.message_id, text='<b>PROGRESS COMPLETED\n\nText Uploading To server 100 % \n ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ \n\nTranslating .... 100 %\n◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️\n\nPosting To Channel 100 %\n ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️\n\n=================\nTotal taken \n 00:02:00 HRS \n\nElapsed Time \n 00:00:00 HRS\n\n Now post new shayari</b>', reply_markup=keybo, parse_mode = 'HTML')
 
 def pic_send(m):
   if m.content_type == "photo":
