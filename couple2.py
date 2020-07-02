@@ -17,16 +17,22 @@ class User:
     def __init__(self, header):
         self.header = header
         
-Akh =["#Hot","#Cool","#Brave"]
-Akh2=["#Penis","#Boobs","#Pussy","#Cock","#Dick" ]
-Akh3=["#Indian","#Rusian","#chinese","#African","#nepali"]
+#Akh =["#Hot","#Cool","#Brave"]
+#Akh2=["#Penis","#Boobs","#Pussy","#Cock","#Dick" ]
+#Akh3=["#Indian","#Rusian","#chinese","#African","#nepali"]
 
-Pk1 = random.choice(Akh)
-Pk2 = random.choice(Akh2)
-Pk3 = random.choice(Akh3)       
+#Pk1 = random.choice(Akh)
+#Pk2 = random.choice(Akh2)
+#Pk3 = random.choice(Akh3)       
         
 @bot.message_handler(func=lambda message:True, content_types=['photo'])
 def command_default(m):
+  Akh =["#Hot","#Cool","#Brave"]
+  Akh2=["#Penis","#Boobs","#Pussy","#Cock","#Dick" ]
+  Akh3=["#Indian","#Rusian","#chinese","#African","#nepali"]
+  Pk1 = random.choice(Akh)
+  Pk2 = random.choice(Akh2)
+  Pk3 = random.choice(Akh3)  
   keyboard = types.InlineKeyboardMarkup()
   btn3 = types.InlineKeyboardButton(text = "👙 VIP PAID GROUP 🔞", url = "https://t.me/joinchat/AAAAAE7S-B5rnDTR1sKhOA")
   keyboard.add(btn3)
@@ -39,6 +45,12 @@ def command_default(m):
 
 @bot.message_handler(func=lambda message:True, content_types=['video'])
 def command_default(m):
+  Akh =["#Hot","#Cool","#Brave"]
+  Akh2=["#Penis","#Boobs","#Pussy","#Cock","#Dick" ]
+  Akh3=["#Indian","#Rusian","#chinese","#African","#nepali"]
+  Pk1 = random.choice(Akh)
+  Pk2 = random.choice(Akh2)
+  Pk3 = random.choice(Akh3)  
   keyboard = types.InlineKeyboardMarkup()
   btn3 = types.InlineKeyboardButton(text = "👙 VIP PAID GROUP 🔞", url = "https://t.me/joinchat/AAAAAE7S-B5rnDTR1sKhOA")
   keyboard.add(btn3)
@@ -51,6 +63,12 @@ def command_default(m):
 
 @bot.message_handler(func=lambda message:True, content_types=['document'])
 def command_default(m):
+  Akh =["#Hot","#Cool","#Brave"]
+  Akh2=["#Penis","#Boobs","#Pussy","#Cock","#Dick" ]
+  Akh3=["#Indian","#Rusian","#chinese","#African","#nepali"]
+  Pk1 = random.choice(Akh)
+  Pk2 = random.choice(Akh2)
+  Pk3 = random.choice(Akh3)  
   keyboard = types.InlineKeyboardMarkup()
   btn3 = types.InlineKeyboardButton(text = "👙 VIP PAID GROUP 🔞", url = "https://t.me/joinchat/AAAAAE7S-B5rnDTR1sKhOA")
   keyboard.add(btn3)
