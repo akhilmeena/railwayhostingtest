@@ -38,10 +38,10 @@ def command_default(m):
   keyboard.add(btn3)
   photo_id = m.photo[0].file_id
   bot.send_message(m.chat.id,text = photo_id)
-  bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
+  #bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
   bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
   bot.send_photo(chat_id=[ "-1001196607237"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  bot.send_photo(chat_id=[ "-1001264715334"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
+  #bot.send_photo(chat_id=[ "-1001264715334"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
 
 @bot.message_handler(func=lambda message:True, content_types=['video'])
 def command_default(m):
@@ -56,10 +56,10 @@ def command_default(m):
   keyboard.add(btn3)
   photo_id = m.video.file_id
   bot.send_message(m.chat.id,text = photo_id)
-  bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
+  #bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
   bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
   bot.send_video(chat_id=[ "-1001196607237"], data=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  bot.send_video(chat_id=[ "-1001264715334"], data=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
+  #bot.send_video(chat_id=[ "-1001264715334"], data=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
 
 @bot.message_handler(func=lambda message:True, content_types=['document'])
 def command_default(m):
@@ -74,10 +74,10 @@ def command_default(m):
   keyboard.add(btn3)
   photo_id = m.document.file_id
   bot.send_message(m.chat.id,text = photo_id)
-  bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
+  #bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
   bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
   bot.send_document(chat_id=[ "-1001196607237"], data=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  bot.send_document(chat_id=[ "-1001264715334"], data=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
+  #bot.send_document(chat_id=[ "-1001264715334"], data=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
 
   
 @server.route('/' + TOKEN, methods=['POST'])
