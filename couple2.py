@@ -34,7 +34,7 @@ def command_default(m):
   Pk2 = random.choice(Akh2)
   Pk3 = random.choice(Akh3)  
   keyboard = types.InlineKeyboardMarkup()
-  btn3 = types.InlineKeyboardButton(text = "👙 VIP PAID GROUP 🔞", url = "https://t.me/joinchat/AAAAAE7S-B5rnDTR1sKhOA")
+  btn3 = types.InlineKeyboardButton(text = "FOLLOW ON INSTAGRAM ↗️", url = "Https://instagram.com/romantic.luv.feelings")
   keyboard.add(btn3)
   photo_id = m.photo[0].file_id
   bot.send_message(m.chat.id,text = photo_id)
@@ -56,7 +56,7 @@ def command_default(m):
   Pk2 = random.choice(Akh2)
   Pk3 = random.choice(Akh3)  
   keyboard = types.InlineKeyboardMarkup()
-  btn3 = types.InlineKeyboardButton(text = "👙 VIP PAID GROUP 🔞", url = "https://t.me/joinchat/AAAAAE7S-B5rnDTR1sKhOA")
+  btn3 = types.InlineKeyboardButton(text = "FOLLOW ON INSTAGRAM ↗️", url = "Https://instagram.com/romantic.luv.feelings")
   keyboard.add(btn3)
   photo_id = m.video.file_id
   bot.send_message(m.chat.id,text = photo_id)
@@ -78,7 +78,7 @@ def command_default(m):
   Pk2 = random.choice(Akh2)
   Pk3 = random.choice(Akh3)  
   keyboard = types.InlineKeyboardMarkup()
-  btn3 = types.InlineKeyboardButton(text = "👙 VIP PAID GROUP 🔞", url = "https://t.me/joinchat/AAAAAE7S-B5rnDTR1sKhOA")
+  btn3 = types.InlineKeyboardButton(text = "FOLLOW ON INSTAGRAM ↗️", url = "Https://instagram.com/romantic.luv.feelings")
   keyboard.add(btn3)
   photo_id = m.document.file_id
   bot.send_message(m.chat.id,text = photo_id)
