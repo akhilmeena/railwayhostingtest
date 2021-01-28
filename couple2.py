@@ -4,6 +4,8 @@ from flask import Flask, request
 import re
 import time
 import telebot
+from PIL import Image, ImageDraw, ImageFont
+from io import BytesIO
 from telebot import types
 import random
 
