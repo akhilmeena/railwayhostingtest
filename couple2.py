@@ -119,10 +119,11 @@ def command_default(m):
   #bot.send_photo(chat_id=[ "-1001264715334"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
   except Exception as e:
     bot.send_message(m.chat.id,e)
-  
-  
-  
-  
+
+
+
+
+
 @bot.message_handler(func=lambda message:True, content_types=['video'])
 def command_default(m):
   Akh =["#Hot","#Cool","#Brave"]
