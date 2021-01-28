@@ -109,14 +109,14 @@ def command_default(m):
     else:
       bot.send_message(m.chat.id,text="size is not defined")
     bot.send_message(m.chat.id,text = photo_id)
-  #bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
-  #bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
-  #bot.send_photo(chat_id=[ "-1001359337725"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  #bot.send_photo(chat_id=[ "-1001319607443"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  #bot.send_photo(chat_id=[ "-1001244088615"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  #bot.send_photo(chat_id=[ "-1001266253256"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  #bot.send_photo(chat_id=[ "-1001411426299"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  #bot.send_photo(chat_id=[ "-1001264715334"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
+    #bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
+    #bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
+    #bot.send_photo(chat_id=[ "-1001359337725"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+    #bot.send_photo(chat_id=[ "-1001319607443"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+    #bot.send_photo(chat_id=[ "-1001244088615"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+    #bot.send_photo(chat_id=[ "-1001266253256"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+    #bot.send_photo(chat_id=[ "-1001411426299"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+    #bot.send_photo(chat_id=[ "-1001264715334"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
   except Exception as e:
     bot.send_message(m.chat.id,e)
 
