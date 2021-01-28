@@ -36,15 +36,84 @@ def command_default(m):
   keyboard = types.InlineKeyboardMarkup()
   btn3 = types.InlineKeyboardButton(text = "FOLLOW ON INSTAGRAM ↗️", url = "Https://instagram.com/romantic.luv.feelings")
   keyboard.add(btn3)
-  photo_id = m.photo[0].file_id
+  try:
+    photo_id = m.photo[-1].file_id
+    file_path = bot.get_file(photo_id).file_path
+    photo = bot.download_file(file_path)
+    img = Image.open(BytesIO(photo))
+    imgWidth,imgHeight = img.size
+    img1 = Image.open("logoinsta2.PNG")
+    im1Width,im1Height = img1.size
+    a = int(imgHeight)/2 + 10
+    b = 50
+    #width, height = img1.size
+    #img1 = img1.resize((width//2, height//2))
+    new_img = img1.resize((int(b),int(int(a))), Image.ANTIALIAS)
+    quality_val = 90
+    #text_plate = Image.new("RGBA", (text_width, text_height), (0,0,0,0))
+    #draw = ImageDraw.Draw(text_plate)
+    #text_img.save("ball.png", format="png")
+    if int(imgHeight) >= int(imgWidth):
+      til = Image.new("RGB",(int(imgHeight),int(imgHeight)),(255,255,255))
+      x = int(imgWidth)/2 
+      y = int(imgHeight)/2
+      z = int(y) - int(x)
+      img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
+      til.paste(img,(int(z),0))
+      output = BytesIO()
+      output.name = "image.jpeg"
+      til.save(output, format='JPEG')
+      photo1 = output.getvalue()
+      bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
+      bot.send_photo(chat_id=[ "-1001359337725"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001319607443"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001244088615"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001266253256"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001411426299"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+    elif int(imgWidth) >= int(imgHeight):
+      til = Image.new("RGB",(int(imgWidth),int(imgWidth)),(255,255,255))
+      x = int(imgHeight)/2 
+      y = int(imgWidth)/2
+      z = int(y) - int(x)
+      img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
+      til.paste(img,(0,int(z)))
+      output = BytesIO()
+      output.name = "image.jpeg"
+      til.save(output, format='JPEG')
+      photo1 = output.getvalue()
+      bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
+      bot.send_photo(chat_id=[ "-1001359337725"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001319607443"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001244088615"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001266253256"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001411426299"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+    elif int(imgWidth) == int(imgHeight):
+      til = Image.new("RGB",(int(imgHeight),int(imgHeight)),(255,255,255))
+      x = int(imgWidth)/2 
+      y = int(imgHeight)/2
+      z = int(y) - int(x)
+      img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
+      til.paste(img,(int(z),0))
+      output = BytesIO()
+      output.name = "image.jpeg"
+      til.save(output, format='JPEG')
+      photo1 = output.getvalue()
+      bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
+      bot.send_photo(chat_id=[ "-1001359337725"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001319607443"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001244088615"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001266253256"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+      bot.send_photo(chat_id=[ "-1001411426299"], photo=photo1, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+    else:
+      bot.send_message(m.chat.id,text="size is not defined")
   bot.send_message(m.chat.id,text = photo_id)
   #bot.forward_message(chat_id = "-1001264715334", from_chat_id = "-1001331807064", message_id = "18")
-  bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
-  bot.send_photo(chat_id=[ "-1001359337725"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  bot.send_photo(chat_id=[ "-1001319607443"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  bot.send_photo(chat_id=[ "-1001244088615"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  bot.send_photo(chat_id=[ "-1001266253256"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
-  bot.send_photo(chat_id=[ "-1001411426299"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+  #bot.forward_message(chat_id = "-1001196607237", from_chat_id = "-1001331807064", message_id = "18")
+  #bot.send_photo(chat_id=[ "-1001359337725"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+  #bot.send_photo(chat_id=[ "-1001319607443"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+  #bot.send_photo(chat_id=[ "-1001244088615"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+  #bot.send_photo(chat_id=[ "-1001266253256"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
+  #bot.send_photo(chat_id=[ "-1001411426299"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup = keyboard)
   #bot.send_photo(chat_id=[ "-1001264715334"], photo=photo_id, caption="💄👙❣️👌👈💦\n\n" + f"{Pk1} {Pk2} {Pk3}",reply_markup=keyboard)
 
 @bot.message_handler(func=lambda message:True, content_types=['video'])
