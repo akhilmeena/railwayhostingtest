@@ -44,10 +44,10 @@ def command_default(m):
     photo = bot.download_file(file_path)
     img = Image.open(BytesIO(photo))
     imgWidth,imgHeight = img.size
-    img1 = Image.open("logoinsta2.png")
+    img1 = Image.open("logocoup.png")
     im1Width,im1Height = img1.size
-    a = int(imgHeight)/2 + 10
-    b = 50
+    #a = int(imgHeight)/2 + 10
+    #b = 50
     #width, height = img1.size
     #img1 = img1.resize((width//2, height//2))
     new_img = img1.resize((int(b),int(int(a))), Image.ANTIALIAS)
@@ -60,6 +60,10 @@ def command_default(m):
       x = int(imgWidth)/2 
       y = int(imgHeight)/2
       z = int(y) - int(x)
+      a = int(imgWidth)/4
+      b = 50
+      new_img = img1.resize((int(a),int(a)), Image.ANTIALIAS)
+      quality_val = 90
       img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
       til.paste(img,(int(z),0))
       output = BytesIO()
@@ -77,6 +81,10 @@ def command_default(m):
       x = int(imgHeight)/2 
       y = int(imgWidth)/2
       z = int(y) - int(x)
+      a = int(imgHeight)/3
+      b = 50
+      new_img = img1.resize((int(a),int(a)), Image.ANTIALIAS)
+      quality_val = 90
       img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
       til.paste(img,(0,int(z)))
       output = BytesIO()
@@ -94,6 +102,10 @@ def command_default(m):
       x = int(imgWidth)/2 
       y = int(imgHeight)/2
       z = int(y) - int(x)
+      a = int(imgHeight)/5
+      b = 50
+      new_img = img1.resize((int(a),int(a)), Image.ANTIALIAS)
+      quality_val = 90
       img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
       til.paste(img,(int(z),0))
       output = BytesIO()
