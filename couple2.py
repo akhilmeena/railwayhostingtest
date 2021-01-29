@@ -50,8 +50,8 @@ def command_default(m):
     #b = 50
     #width, height = img1.size
     #img1 = img1.resize((width//2, height//2))
-    new_img = img1.resize((int(b),int(int(a))), Image.ANTIALIAS)
-    quality_val = 90
+    #new_img = img1.resize((int(b),int(int(a))), Image.ANTIALIAS)
+    #quality_val = 90
     #text_plate = Image.new("RGBA", (text_width, text_height), (0,0,0,0))
     #draw = ImageDraw.Draw(text_plate)
     #text_img.save("ball.png", format="png")
@@ -63,7 +63,7 @@ def command_default(m):
       a = int(imgWidth)/4
       b = 50
       new_img = img1.resize((int(a),int(a)), Image.ANTIALIAS)
-      quality_val = 90
+      quality_val = 100
       img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
       til.paste(img,(int(z),0))
       output = BytesIO()
@@ -84,7 +84,7 @@ def command_default(m):
       a = int(imgHeight)/3
       b = 50
       new_img = img1.resize((int(a),int(a)), Image.ANTIALIAS)
-      quality_val = 90
+      quality_val = 100
       img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
       til.paste(img,(0,int(z)))
       output = BytesIO()
@@ -105,7 +105,7 @@ def command_default(m):
       a = int(imgHeight)/5
       b = 50
       new_img = img1.resize((int(a),int(a)), Image.ANTIALIAS)
-      quality_val = 90
+      quality_val = 100
       img.paste(new_img, (0,int(imgHeight/4)), mask=new_img)
       til.paste(img,(int(z),0))
       output = BytesIO()
