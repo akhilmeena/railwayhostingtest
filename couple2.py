@@ -44,7 +44,7 @@ def command_default(m):
     photo = bot.download_file(file_path)
     img = Image.open(BytesIO(photo))
     imgWidth,imgHeight = img.size
-    img1 = Image.open("logoinsta2.png","rb")
+    img1 = Image.open("logoinsta2.png")
     im1Width,im1Height = img1.size
     a = int(imgHeight)/2 + 10
     b = 50
