@@ -16,3 +16,6 @@ translate==3.5.0
 googletrans==2.4.0
 translation==1.0.5
 langdetect==1.0.8
+Pillow==7.1.2
+apyio==0.2.0
+ 
