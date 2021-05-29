@@ -48,7 +48,7 @@ def channel2(m):
   t4= "\n━━━━━━━━━━━━━━━━━━━━"
   t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
   caption = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
-  if re.search(myre,lnk):
+  if re.search(myre,f"{link}"):
     bot.send_photo(chat_id="-1001246111561",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
     bot.send_message(m.chat.id,text="posted")
   else:
