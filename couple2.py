@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 from telebot import types
 import random
-
+from random import sample
 
 TOKEN = "1071595338:AAFAPoo4xsxgAHd-HuQC5NmjnAadlwmrkLI"
 bot = telebot.TeleBot(token=TOKEN)
