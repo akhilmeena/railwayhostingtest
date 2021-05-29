@@ -185,7 +185,7 @@ def chatid(message):
   fnd = "✅ Watch online"
   ttt = message.text
   ak = fnd in ttt
-  if f"{ak}" == "True":
+  if f"{ak}" == "False":
     sequence = [i for i in range(30)]
     subset = sample(sequence, 3)
     for i in subset:
