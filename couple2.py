@@ -50,6 +50,7 @@ def channel2(m):
   caption = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
   if re.search(myre,lnk):
     bot.send_photo(chat_id="-1001246111561",photo,caption,parse_mode="html")
+    bot.send_message(m.chat.id,text="posted")
   else:
     m = bot.send_message(m.chat.id,text="link is not valid send again pdisk Link")
     bot.register_next_step_handler(m, channel2)
