@@ -19,7 +19,9 @@ class User:
     def __init__(self, header):
         self.header = header
         
-
+@bot.message_handler(commands=['start'])
+def test(m):
+  bot.send_message(m.chat.id,text="akhill")
         
 @bot.message_handler(func=lambda message:True, content_types=['photo'])
 def command_default(m):
