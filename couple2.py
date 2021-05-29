@@ -23,7 +23,20 @@ class User:
 @bot.message_handler(commands=['start'])
 def test(m):
   bot.send_message(m.chat.id,text="akhill")
-        
+
+@bot.message_handler(commands=['getimg'])
+def getimgid(m):
+  m = bot.send_message(m.chat.id,text="send me pics")
+  bot.register_next_step_handler(m, getid)
+
+def getid(m):
+  try:
+    photo_id = m.photo[-1].file_id
+    m = bot.send_message(m.chat.id,text=photo_id)
+    bot.register_next_step_handler(m, getid)
+  except:
+    bot.send_message(m.chat.id,text="send it again /start")
+
 @bot.message_handler(func=lambda message:True, content_types=['photo'])
 def command_default(m):
   photo_id = m.photo[-1].file_id
@@ -45,27 +58,32 @@ def command_default(m):
 
 def channel1(m):
   User.header = m.text
-  m = bot.send_message(m.chat.id,text="send now pdisk Link")
-  bot.register_next_step_handler(m, channel2)
+  if m.text == "/start":
+    bot.send_message(m.chat.id,text="send it again /start")
+  else:
+    m = bot.send_message(m.chat.id,text="send now pdisk Link")
+    bot.register_next_step_handler(m, channel2)
   
 def channel2(m):
-  photo1 = f"{User.pic}"
-  head = f"{User.header}"
-  link = m.text
-  myre = '^(http|https)://'
-  t1 = f"🔞 {head}"
-  t2 = "\n━━━━━━━━━━━━━━━━━━━━"
-  t3 = f"\n📥 Download now\n{link}\n\n✅ Watch online \n◼️ <a href='{link}'>480p</a> 🔶 <a href='{link}'>720p</a> ◼️"
-  t4= "\n━━━━━━━━━━━━━━━━━━━━"
-  t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
-  caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
-  if re.search(myre,f"{link}"):
-    bot.send_photo(chat_id="-1001246111561",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
-    bot.send_message(m.chat.id,text="posted")
+  if m.text == "/start":
+    bot.send_message(m.chat.id,text="send it again /start")
   else:
-    m = bot.send_message(m.chat.id,text="link is not valid send again pdisk Link")
-    bot.register_next_step_handler(m, channel2)
-
+    photo1 = f"{User.pic}"
+    head = f"{User.header}"
+    link = m.text
+    myre = '^(http|https)://'
+    t1 = f"🔞 {head}"
+    t2 = "\n━━━━━━━━━━━━━━━━━━━━"
+    t3 = f"\n📥 Download now\n{link}\n✅ Watch online \n◼️ <a href='{link}'>480p</a> 🔶 <a href='{link}'>720p</a> ◼️"
+    t4= "\n━━━━━━━━━━━━━━━━━━━━"
+    t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
+    caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
+    if re.search(myre,f"{link}"):
+      bot.send_photo(m.chat.id,photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
+      bot.send_message(m.chat.id,text="posted")
+    else:
+      m = bot.send_message(m.chat.id,text="link is not valid send again pdisk Link")
+      bot.register_next_step_handler(m, channel2)
 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
