@@ -30,11 +30,15 @@ def command_default(m):
   tt = m.caption
   User.pic = photo_id
   bot.send_message(m.chat.id,text="send now pdisk Title")
-  kya="\n"
+  kya=""
   tag_split = tt.splitlines()
   for each_cn in tag_split:
     new_cn = each_cn.strip()
-    kya+=f"<code>{new_cn}</code>"
+    myre = '^(http|https)://'
+    if re.search(myre,f"{each_cn}"):
+      kya+=f"\n{new_cn}"
+    else:
+      kya+=f"\n<code>{new_cn}</code>"
   m = bot.send_message(m.chat.id,text=kya,parse_mode="html")
   bot.register_next_step_handler(m, channel1)
 
