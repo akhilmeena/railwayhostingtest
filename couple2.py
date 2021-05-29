@@ -27,8 +27,15 @@ def test(m):
 @bot.message_handler(func=lambda message:True, content_types=['photo'])
 def command_default(m):
   photo_id = m.photo[-1].file_id
+  tt = m.caption
   User.pic = photo_id
-  m = bot.send_message(m.chat.id,text="send now pdisk Title")
+  bot.send_message(m.chat.id,text="send now pdisk Title")
+  kya="\n"
+  tag_split = tt.splitlines()
+  for each_cn in tag_split:
+    new_cn = each_cn.strip()
+    kya+=f"<code>{new_cn}</code>"
+  m = bot.send_message(m.chat.id,text=kya,parse_mode="html")
   bot.register_next_step_handler(m, channel1)
 
 
