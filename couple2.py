@@ -44,7 +44,7 @@ def channel2(m):
   myre = '^(http|https)://'
   t1 = f"🔞 {head}"
   t2 = "\n━━━━━━━━━━━━━━━━━━━━"
-  t3 = f"\n📥 Download now\n{link}\n✅ Watch online \n◼️ <a href='{link}'>480p</a> 🔶 <a href='{link}'>720p</a> ◼️"
+  t3 = f"\n📥 Download now\n{link}\n\n✅ Watch online \n◼️ <a href='{link}'>480p</a> 🔶 <a href='{link}'>720p</a> ◼️"
   t4= "\n━━━━━━━━━━━━━━━━━━━━"
   t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
   caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
