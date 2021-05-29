@@ -201,7 +201,7 @@ def chatid(message):
       bot.send_photo(message.chat.id,photo=f'{ppppp[int(i)]}',caption=f"{caption1}",parse_mode="html")
   else:
     print("np")
-    bot.send_message(message.chat.id,text="nothing")
+    #bot.send_message(message.chat.id,text="nothing")
 
 
 @server.route('/' + TOKEN, methods=['POST'])
