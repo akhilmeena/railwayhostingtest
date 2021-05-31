@@ -6,13 +6,25 @@ import time
 import telebot
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
+import time
+import random, string
+import telebot
 from telebot import types
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 import random
 from random import sample
 
 TOKEN = "1071595338:AAFAPoo4xsxgAHd-HuQC5NmjnAadlwmrkLI"
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
+
+
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
+creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scope)
+client = gspread.authorize(creds)
+ak = client.open("pdiskdata")
+sheet1 = ak.worksheet("data")
 
 user_dict = {}
 class User:
