@@ -158,7 +158,9 @@ def command_default(m):
       kya+=f"\n{new_cn}"
     else:
       kya+=f"\n<code>{new_cn}</code>"
-  m = bot.send_message(m.chat.id,text=kya,parse_mode="html")
+  myString = f"{tt}"
+  linkkksss = re.search("(?P<url>https?://[^\s]+)", myString).group("url")
+  m = bot.send_message(m.chat.id,text=f"{kya}\n\n\n\n{linkkksss}",parse_mode="html")
   bot.register_next_step_handler(m, channel1)
 
 
