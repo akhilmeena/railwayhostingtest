@@ -100,7 +100,8 @@ def chatid(message):
   ttt = message.text
   ak = fnd in ttt
   if f"{ak}" == "False":
-    sequence = [i for i in range(30)]
+    h = sheet1.get('A1000').first()
+    sequence = [i for i in range(int(h))]
     subset = sample(sequence, 3)
     for i in subset:
       ppppp = sheet1.get(f"B{i}").first()
