@@ -107,7 +107,7 @@ def chatid(message):
       ppppp = sheet1.get(f"B{i}").first()
       ttttt = sheet1.get(f"C{i}").first()
       lllll = sheet1.get(f"D{i}").first()
-      t1 = f"🔞 " + ttttt[int(i)]
+      t1 = f"🔞 " + f"{ttttt}"
       t2 = "\n━━━━━━━━━━━━━━━━━━━━"
       t3 = f"\n📥 Download now\n{lllll}\n✅ Watch online \n◼️ <a href='{lllll}'>480p</a> 🔶 <a href='{lllll}'>720p</a> ◼️"
       t4= "\n━━━━━━━━━━━━━━━━━━━━"
