@@ -133,6 +133,8 @@ def chatid(message):
     a = bot.send_message(message.chat.id,text=f"{text1}",parse_mode="html")
     iddu = a.message_id
     sheet1.update_cell(vitt1,f"{iddu}")
+  except:
+    print("===")
 
 
 
