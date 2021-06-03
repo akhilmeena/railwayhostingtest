@@ -25,7 +25,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scop
 client = gspread.authorize(creds)
 ak = client.open("pdiskdata")
 sheet1 = ak.worksheet("data")
-sheet1 = ak.worksheet("normaldata")
+sheet2 = ak.worksheet("normaldata")
 
 user_dict = {}
 class User:
