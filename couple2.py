@@ -136,7 +136,8 @@ def chatid(message):
     #bot.send_message(channel,iddu)
     sheet2.update(vitt1,iddu)
   except Exception as e:
-    bot.send_message(channel,e)
+    print("....")
+    #bot.send_message(channel,e)
 
 
 
