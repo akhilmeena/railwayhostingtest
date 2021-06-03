@@ -114,6 +114,7 @@ def chatid(message):
       t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
       caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
       bot.send_photo(message.chat.id,photo=f'{ppppp}',caption=f"{caption1}",parse_mode="html")
+      time.sleep(random.randrange(10))
   else:
     print("np")
     #bot.send_message(message.chat.id,text="nothing")
