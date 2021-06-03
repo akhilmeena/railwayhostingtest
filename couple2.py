@@ -118,6 +118,17 @@ def chatid(message):
   else:
     print("np")
     #bot.send_message(message.chat.id,text="nothing")
+  q = sheet1.get('B1000').first()
+  text1 = '<a href="https://t.me/joinchat/AAAAAEyeDmseGTWxclwOPw">🔞 New Deshi Porn Movies  🔞\n🔞 New Deshi Porn Movies  🔞</a>'
+  try:
+    bot.delete_message(message.chat.id,f"{1}")
+    a = bot.send_message(message.chat.id,text=text1,parse_mode="html")
+    iddu = a.message_id
+    sheet1.update_cell("B1000",f"{iddu}")
+  except:
+    a = bot.send_message(message.chat.id,text=text1,parse_mode="html")
+    iddu = a.message_id
+    sheet1.update_cell("B1000",f"{iddu}")
 
 
 @server.route('/' + TOKEN, methods=['POST'])
