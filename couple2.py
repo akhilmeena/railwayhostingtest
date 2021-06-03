@@ -25,6 +25,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scop
 client = gspread.authorize(creds)
 ak = client.open("pdiskdata")
 sheet1 = ak.worksheet("data")
+sheet1 = ak.worksheet("normaldata")
 
 user_dict = {}
 class User:
@@ -118,17 +119,21 @@ def chatid(message):
   else:
     print("np")
     #bot.send_message(message.chat.id,text="nothing")
-  #q = sheet1.get('B1000').first()
-  #text1 = '<a href="https://t.me/joinchat/AAAAAEyeDmseGTWxclwOPw">🔞 New Deshi Porn Movies  🔞\n🔞 New Deshi Porn Movies  🔞</a>'
-  #try:
-    #bot.delete_message(message.chat.id,f"{q}")
-    #a = bot.send_message(message.chat.id,text=text1,parse_mode="html")
-    #iddu = a.message_id
-    #sheet1.update_cell("B1000",f"{iddu}")
-  #except:
-    #a = bot.send_message(message.chat.id,text=text1,parse_mode="html")
-    #iddu = a.message_id
-    #sheet1.update_cell("B1000",f"{iddu}")
+  channel = message.chat.id
+  try:
+    cells = sheet2.find(f"{channel}")
+    row1 = cells.row
+    vitt1 = 'B' + f"{row1}"
+    fllnktxtt = sheet2.get(vitt1).first()
+    text1 = '<a href="https://t.me/joinchat/AAAAAEyeDmseGTWxclwOPw">🔞 New Deshi Porn Movies  🔞\n🔞 New Deshi Porn Movies  🔞</a>'
+    if len(fllnktxtt) > 0:
+      bot.delete_message(f"{channel}",f"{fllnktxtt}")
+    else:
+      print("....")
+    a = bot.send_message(message.chat.id,text=f"{text1}",parse_mode="html")
+    iddu = a.message_id
+    sheet1.update_cell(vitt1,f"{iddu}")
+
 
 
 @server.route('/' + TOKEN, methods=['POST'])
