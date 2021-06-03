@@ -128,7 +128,7 @@ def chatid(message):
     fllnktxtt = sheet2.cell(int(row1),2).value
     text1 = '<a href="https://t.me/joinchat/AAAAAEyeDmseGTWxclwOPw">🔞 New Deshi Porn Movies  🔞\n🔞 New Deshi Porn Movies  🔞</a>'
     if f"{fllnktxtt}" != "":
-      bot.delete_message(f"{channel}",f"{fllnktxtt}")
+      bot.delete_message(channel,fllnktxtt)
     else:
       print("....")
     a = bot.send_message(message.chat.id,text=f"{text1}",parse_mode="html")
