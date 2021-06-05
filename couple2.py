@@ -88,8 +88,13 @@ def channel2(m):
       sheet1.update_cell(int(ri),2 ,f"{photo1}")
       sheet1.update_cell(int(ri),3 ,f"{head}")
       sheet1.update_cell(int(ri),4 ,f"{link}")
-      bot.send_photo(chat_id="-1001246111561",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
-      bot.send_message(m.chat.id,text="posted")
+      values_list2 = sheet2.col_values(1)
+      for i in values_list2:
+        try:
+          bot.send_photo(chat_id=f"{i}",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
+          bot.send_message(m.chat.id,text=f"{i} posted")
+        except:
+          bot.send_message(m.chat.id,text=f"{i} failed")
     else:
       m = bot.send_message(m.chat.id,text="link is not valid send again pdisk Link")
       bot.register_next_step_handler(m, channel2)
