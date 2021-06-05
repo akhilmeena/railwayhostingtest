@@ -92,9 +92,10 @@ def channel2(m):
       for i in values_list2:
         try:
           bot.send_photo(chat_id=f"{i}",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
-          bot.send_message(m.chat.id,text=f"{i} posted")
+          #bot.send_message(m.chat.id,text=f"{i} posted")
         except:
           bot.send_message(m.chat.id,text=f"{i} failed")
+      bot.send_message(m.chat.id,text=f"Done")
     else:
       m = bot.send_message(m.chat.id,text="link is not valid send again pdisk Link")
       bot.register_next_step_handler(m, channel2)
