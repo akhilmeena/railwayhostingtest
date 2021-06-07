@@ -112,8 +112,11 @@ def chatid(message):
     subset = sample(sequence, 3)
     for i in subset:
       ppppp = sheet1.get(f"B{i}").first()
+      time.sleep(2)
       ttttt = sheet1.get(f"C{i}").first()
+      time.sleep(2)
       lllll = sheet1.get(f"D{i}").first()
+      time.sleep(2)
       t1 = f"🔞 " + f"{ttttt}"
       t2 = "\n━━━━━━━━━━━━━━━━━━━━"
       t3 = f"\n📥 Download now\n{lllll}\n✅ Watch online \n◼️ <a href='{lllll}'>480p</a> 🔶 <a href='{lllll}'>720p</a> ◼️"
@@ -121,7 +124,7 @@ def chatid(message):
       t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
       caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
       bot.send_photo(message.chat.id,photo=f'{ppppp}',caption=f"{caption1}",parse_mode="html")
-      #time.sleep(random.randrange(30, 90))
+      time.sleep(random.randrange(5,10))
   else:
     print("np")
     #bot.send_message(message.chat.id,text="nothing")
