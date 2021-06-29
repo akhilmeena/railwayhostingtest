@@ -37,6 +37,33 @@ class User:
 def test(m):
   bot.send_message(m.chat.id,text="akhill")
 
+@bot.message_handler(commands=['start2'])
+def test(m):
+  aa = bot.send_message(m.chat.id,text="send me post ids")
+  bot.register_next_step_handler(aa,akkk)
+  
+def akkk(m):
+  ids = m.text
+  tag_split = ids.splitlines()
+  for each_cn in tag_split:
+    i = each_cn.strip()
+    ppppp = sheet1.get(f"B{i}").first()
+    time.sleep(2)
+    ttttt = sheet1.get(f"C{i}").first()
+    time.sleep(2)
+    lllll = sheet1.get(f"D{i}").first()
+    time.sleep(2)
+    t1 = f"🔞 " + f"{ttttt}"
+    t2 = "\n━━━━━━━━━━━━━━━━━━━━"
+    t3 = f"\n📥 Download now\n{lllll}\n✅ Watch online \n◼️ <a href='{lllll}'>480p</a> 🔶 <a href='{lllll}'>720p</a> ◼️"
+    t4= "\n━━━━━━━━━━━━━━━━━━━━"
+    t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
+    caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
+    bot.send_photo(chat_id="-1001393074609",photo=f'{ppppp}',caption=f"{caption1}",parse_mode="html")
+    time.sleep(random.randrange(5,10))
+
+
+
 @bot.message_handler(func=lambda message:True, content_types=['photo'])
 def command_default(m):
   photo_id = m.photo[-1].file_id
@@ -101,7 +128,40 @@ def channel2(m):
       bot.register_next_step_handler(m, channel2)
 
 
-@bot.channel_post_handler(func=lambda message:True, content_types=['text'])
+def chatid2(message):
+  fnd = "✅ Watch online"
+  ttt = message.text
+  ak = fnd in ttt
+  if f"{ak}" == "False":
+    h = sheet1.get('A1000').first()
+    sequence = [i for i in range(int(h))]
+    subset = sample(sequence, 3)
+    for i in subset:
+      pstid = random.randrange(3,int(h))
+      bot.forward_message(chat_id = message.chat.id, from_chat_id = "-1001393074609", message_id = f"{pstid}")
+      time.sleep(2)
+  else:
+    print("np")
+  try:
+    cells = sheet2.find(f"{channel}")
+    row1 = cells.row
+    vitt1 = 'B' + f"{row1}"
+    #fllnktxtt = sheet2.get(vitt1).first()
+    fllnktxtt = sheet2.cell(int(row1),2).value
+    text1 = '<a href="https://t.me/joinchat/AAAAAEyeDmseGTWxclwOPw">🔞 New Deshi Porn Movies  🔞\n🔞 New Deshi Porn Movies  🔞</a>'
+    if f"{fllnktxtt}" != "":
+      bot.delete_message(channel,fllnktxtt)
+    else:
+      print("....")
+    a = bot.send_message(message.chat.id,text=f"{text1}",parse_mode="html")
+    iddu = a.message_id
+    #bot.send_message(channel,iddu)
+    sheet2.update(vitt1,iddu)
+  except Exception as e:
+    print("....")
+    #bot.send_message(channel,e)
+
+#@bot.channel_post_handler(func=lambda message:True, content_types=['text'])
 def chatid(message):
   fnd = "✅ Watch online"
   ttt = message.text
