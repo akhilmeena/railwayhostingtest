@@ -37,10 +37,10 @@ class User:
 def test(m):
   bot.send_message(m.chat.id,text="akhill")
 
-@bot.message_handler(commands=['start2'])
-def test(m):
-  aa = bot.send_message(m.chat.id,text="send me post ids")
-  bot.register_next_step_handler(aa,akkk)
+#@bot.message_handler(commands=['start2'])
+#def test(m):
+  #aa = bot.send_message(m.chat.id,text="send me post ids")
+  #bot.register_next_step_handler(aa,akkk)
   
 def akkk(m):
   ids = m.text
