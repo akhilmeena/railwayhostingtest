@@ -128,6 +128,7 @@ def channel2(m):
       bot.register_next_step_handler(m, channel2)
 
 
+@bot.channel_post_handler(func=lambda message:True, content_types=['text'])
 def chatid2(message):
   fnd = "✅ Watch online"
   ttt = message.text
@@ -137,7 +138,7 @@ def chatid2(message):
     sequence = [i for i in range(int(h))]
     subset = sample(sequence, 3)
     for i in subset:
-      pstid = random.randrange(3,int(h))
+      pstid = random.randrange(2,int(h)-1)
       bot.forward_message(chat_id = message.chat.id, from_chat_id = "-1001393074609", message_id = f"{pstid}")
       time.sleep(2)
   else:
