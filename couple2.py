@@ -48,11 +48,11 @@ def akkk(m):
   for each_cn in tag_split:
     i = each_cn.strip()
     ppppp = sheet1.get(f"B{i}").first()
-    time.sleep(2)
+    time.sleep(1)
     ttttt = sheet1.get(f"C{i}").first()
-    time.sleep(2)
+    time.sleep(1)
     lllll = sheet1.get(f"D{i}").first()
-    time.sleep(2)
+    time.sleep(1)
     t1 = f"🔞 " + f"{ttttt}"
     t2 = "\n━━━━━━━━━━━━━━━━━━━━"
     t3 = f"\n📥 Download now\n{lllll}\n✅ Watch online \n◼️ <a href='{lllll}'>480p</a> 🔶 <a href='{lllll}'>720p</a> ◼️"
@@ -60,7 +60,7 @@ def akkk(m):
     t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
     caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
     bot.send_photo(chat_id="-1001393074609",photo=f'{ppppp}',caption=f"{caption1}",parse_mode="html")
-    time.sleep(random.randrange(5,10))
+    #time.sleep(random.randrange(5,10))
 
 
 
