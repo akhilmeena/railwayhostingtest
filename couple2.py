@@ -155,7 +155,7 @@ def chatid2(message):
       bot.delete_message(channel,fllnktxtt)
     else:
       print("....")
-    a = bot.send_message(message.chat.id,text=f"{text1}",parse_mode="html")
+    a = bot.send_message(message.chat.id,text=f"{text1}",parse_mode="html",disable_web_page_preview=True)
     iddu = a.message_id
     #bot.send_message(channel,iddu)
     sheet2.update(vitt1,iddu)
