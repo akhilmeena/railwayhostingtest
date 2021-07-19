@@ -150,7 +150,7 @@ def chatid2(message):
     vitt1 = 'B' + f"{row1}"
     #fllnktxtt = sheet2.get(vitt1).first()
     fllnktxtt = sheet2.cell(int(row1),2).value
-    text1 = '<a href="https://t.me/joinchat/AAAAAEyeDmseGTWxclwOPw">🔞 New Deshi Porn Movies  🔞\n🔞 New Deshi Porn Movies  🔞</a>'
+    text1 = '<a href="https://t.me/joinchat/jqne_cxAZVU1ZmQ1">🔞 New Deshi Porn Movies  🔞\n🔞 New Deshi Porn Movies  🔞</a>'
     if f"{fllnktxtt}" != "":
       bot.delete_message(channel,fllnktxtt)
     else:
