@@ -143,6 +143,7 @@ def chatid2(message):
       time.sleep(2)
   else:
     print("np")
+  channel = message.chat.id
   try:
     cells = sheet2.find(f"{channel}")
     row1 = cells.row
