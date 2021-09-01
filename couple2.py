@@ -123,7 +123,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://pdiskdevu123.herokuapp.com/' + config.BOT_TOKEN)
+    bot.set_webhook(url='https://' + config.app + '.herokuapp.com/' + config.BOT_TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
