@@ -16,8 +16,8 @@ import random
 from random import sample
 import config
 
-TOKEN = config.BOT_TOKEN
-#TOKEN = "1933480129:AAGI3g4tICz2Dj6Cg7q0yMaMq6bAmDF6_94"
+#TOKEN = config.BOT_TOKEN
+TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
 
