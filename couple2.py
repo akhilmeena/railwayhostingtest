@@ -16,8 +16,9 @@ import random
 from random import sample
 import config
 
+TOKEN = config.BOT_TOKEN
 #TOKEN = "1933480129:AAGI3g4tICz2Dj6Cg7q0yMaMq6bAmDF6_94"
-bot = telebot.TeleBot(token=config.BOT_TOKEN)
+bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
 
 
@@ -123,7 +124,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://' + config.app + '.herokuapp.com/' + config.BOT_TOKEN)
+    bot.set_webhook(url='https://' + config.app + '.herokuapp.com/' + TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
