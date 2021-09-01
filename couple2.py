@@ -14,17 +14,18 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 from random import sample
+import config
 
-TOKEN = "1933480129:AAGI3g4tICz2Dj6Cg7q0yMaMq6bAmDF6_94"
-bot = telebot.TeleBot(token=TOKEN)
+#TOKEN = "1933480129:AAGI3g4tICz2Dj6Cg7q0yMaMq6bAmDF6_94"
+bot = telebot.TeleBot(token=config.BOT_TOKEN)
 server = Flask(__name__)
 
 
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scope)
 client = gspread.authorize(creds)
-ak = client.open("pdiskdataman")
-sheet3 = ak.worksheet("devuchanneldata")
+ak = client.open("pdiskv2")
+sheet1 = ak.worksheet(config.SHEETA)
 
 user_dict = {}
 class User:
@@ -82,15 +83,15 @@ def channel2(m):
     t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
     caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
     if re.search(myre,f"{link}"):
-      values_list2 = sheet3.col_values(1)
+      values_list2 = sheet1.col_values(1)
       for i in values_list2:
         try:
           bot.send_photo(chat_id=f"{i}",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
         except:
           bot.send_message(m.chat.id,text=f"{i} failed")
-      chotu=bot.send_photo(chat_id="-1001517542732",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
+      chotu=bot.send_photo(chat_id=config.CHANNEL_ID,photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
       akhil=chotu.message_id
-      sheet3.update("D20",akhil)
+      sheet1.update("D20",akhil)
       bot.send_message(m.chat.id,text=f"Done")
     else:
       m = bot.send_message(m.chat.id,text="link is not valid send again pdisk Link")
@@ -108,7 +109,7 @@ def chatid2(message):
     subset = sample(sequence, 3)
     for i in subset:
       pstid = random.randrange(2,int(h)-1)
-      bot.forward_message(chat_id = message.chat.id, from_chat_id = "-1001517542732", message_id = f"{pstid}")
+      bot.forward_message(chat_id = message.chat.id, from_chat_id = config.CHANNEL_ID, message_id = f"{pstid}")
       time.sleep(2)
   else:
     print("np")
@@ -122,7 +123,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://pdiskdevu123.herokuapp.com/' + "1933480129:AAGI3g4tICz2Dj6Cg7q0yMaMq6bAmDF6_94")
+    bot.set_webhook(url='https://pdiskdevu123.herokuapp.com/' + config.BOT_TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
