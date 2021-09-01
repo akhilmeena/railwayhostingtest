@@ -14,9 +14,9 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 from random import sample
+import config
 
-TOKEN = "1071595338:AAFAPoo4xsxgAHd-HuQC5NmjnAadlwmrkLI"
-bot = telebot.TeleBot(token=TOKEN)
+bot = telebot.TeleBot(token=BOT_TOKEN)
 server = Flask(__name__)
 
 
@@ -170,7 +170,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://couple14.herokuapp.com/' + "1071595338:AAFAPoo4xsxgAHd-HuQC5NmjnAadlwmrkLI")
+    bot.set_webhook(url='https://couple14.herokuapp.com/' + BOT_TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
