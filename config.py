@@ -1,0 +1,3 @@
+BOT_TOEN=""
+CHANNEL_ID=""
+SHEET1=""
