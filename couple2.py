@@ -14,10 +14,12 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 from random import sample
-from config import Config
+#from config import Config
 
-
-#TOKEN = Config.BOT_TOKEN
+SHEETA = "data1"
+App = "akhilpdisk"
+chnlid = "1551862526"
+CHANNEL_ID="-10" + chnlid
 TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
