@@ -19,7 +19,7 @@ import config
 
 #TOKEN = config.BOT_TOKEN
 #TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
-bot = telebot.TeleBot(token=config.TOKEN)
+bot = telebot.TeleBot(token=config.BOT_TOKEN)
 server = Flask(__name__)
 
 
@@ -126,7 +126,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://' + config.app + '.herokuapp.com/' + config.TOKEN)
+    bot.set_webhook(url='https://' + config.app + '.herokuapp.com/' + config.BOT_TOKEN)
     return "!", 200
  
 if __name__ == "__main__":
