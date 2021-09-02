@@ -14,7 +14,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 from random import sample
-import config
+from config import config
 
 
 #TOKEN = config.BOT_TOKEN
