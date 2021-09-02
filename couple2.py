@@ -92,7 +92,7 @@ def channel2(m):
           bot.send_photo(chat_id=f"{i}",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
         except:
           bot.send_message(m.chat.id,text=f"{i} failed")
-      chotu=bot.send_photo(chat_id="-1001551862526",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
+      chotu=bot.send_photo(chat_id=Config.CHANNEL_ID,photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
       akhil=chotu.message_id
       sheet3.update("D20",akhil)
       bot.send_message(m.chat.id,text=f"Done")
@@ -112,7 +112,7 @@ def chatid2(message):
     subset = sample(sequence, 3)
     for i in subset:
       pstid = random.randrange(2,int(h)-1)
-      bot.forward_message(chat_id = message.chat.id, from_chat_id = "-1001551862526", message_id = f"{pstid}")
+      bot.forward_message(chat_id = message.chat.id, from_chat_id = Config.CHANNEL_ID, message_id = f"{pstid}")
       time.sleep(2)
   else:
     print("np")
