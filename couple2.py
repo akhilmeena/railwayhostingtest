@@ -86,7 +86,7 @@ def channel2(m):
     t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
     caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
     if re.search(myre,f"{link}"):
-      values_list2 = sheet3.col_values(1)
+      values_list2 = sheet1.col_values(1)
       for i in values_list2:
         try:
           bot.send_photo(chat_id=f"{i}",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
@@ -94,7 +94,7 @@ def channel2(m):
           bot.send_message(m.chat.id,text=f"{i} failed")
       chotu=bot.send_photo(chat_id=Config.CHANNEL_ID,photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
       akhil=chotu.message_id
-      sheet3.update("D20",akhil)
+      sheet1.update("D20",akhil)
       bot.send_message(m.chat.id,text=f"Done")
     else:
       m = bot.send_message(m.chat.id,text="link is not valid send again pdisk Link")
