@@ -4,4 +4,4 @@ class Config:
     SHEETA = "data1"
     app = "akhilpdisk"
     chnlid = "1551862526"
-    CHANNEL_ID="-10" + chnlid
+    CHANNEL_ID="-100" + chnlid
