@@ -14,7 +14,6 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 from random import sample
-import config
 
 #SHEETA = "data1"
 #app = "akhilpdisk"
@@ -23,27 +22,26 @@ TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
 
+#chnlid = "1551862526"
+#CHANNEL_ID="-1001551862526"# + chnlid
 
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scope)
 client = gspread.authorize(creds)
 ak = client.open("pdiskv2")
 sheet1 = ak.worksheet("data1")
-
-#chnlid = "1551862526"
-CHANNEL_ID="-1001551862526"# + chnlid
-
+ 
 user_dict = {}
 class User:
     def __init__(self, header):
         self.header = header
         self.pic = pic
-
+ 
 @bot.message_handler(commands=['start'])
 def test(m):
   bot.send_message(m.chat.id,text="akhill")
-
-
+ 
+ 
 @bot.message_handler(func=lambda message:True, content_types=['photo'])
 def command_default(m):
   photo_id = m.photo[-1].file_id
@@ -64,8 +62,8 @@ def command_default(m):
   linkkksss = re.findall(r'(https?://\S+)', myString)
   m = bot.send_message(m.chat.id,text=f"{kya}\n\n\n\n{linkkksss}",parse_mode="html")
   bot.register_next_step_handler(m, channel1)
-
-
+ 
+ 
 def channel1(m):
   User.header = m.text
   if m.text == "/start":
@@ -89,21 +87,21 @@ def channel2(m):
     t5 = "\nWATCH ONLINE OR DOWNLOAD\n(Just Install PLAYit App from playstore)\n🚀 Fastest Speed || 🔆 No Buffering"
     caption1 = f"<b>{t1}{t2}{t3}{t4}{t5}</b>"
     if re.search(myre,f"{link}"):
-      values_list2 = sheet1.col_values(1)
+      values_list2 = sheet3.col_values(1)
       for i in values_list2:
         try:
           bot.send_photo(chat_id=f"{i}",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
         except:
           bot.send_message(m.chat.id,text=f"{i} failed")
-      chotu=bot.send_photo(chat_id=CHANNEL_ID,photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
+      chotu=bot.send_photo(chat_id="-1001551862526",photo=f'{photo1}',caption=f"{caption1}",parse_mode="html")
       akhil=chotu.message_id
-      sheet1.update("D20",akhil)
+      sheet3.update("D20",akhil)
       bot.send_message(m.chat.id,text=f"Done")
     else:
       m = bot.send_message(m.chat.id,text="link is not valid send again pdisk Link")
       bot.register_next_step_handler(m, channel2)
-
-
+ 
+ 
 @bot.channel_post_handler(func=lambda message:True, content_types=['text'])
 def chatid2(message):
   fnd = "✅ Watch online"
@@ -115,22 +113,22 @@ def chatid2(message):
     subset = sample(sequence, 3)
     for i in subset:
       pstid = random.randrange(2,int(h)-1)
-      bot.forward_message(chat_id = message.chat.id, from_chat_id = CHANNEL_ID, message_id = f"{pstid}")
+      bot.forward_message(chat_id = message.chat.id, from_chat_id = "-1001551862526", message_id = f"{pstid}")
       time.sleep(2)
   else:
     print("np")
-
-
+ 
+ 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
-
+ 
 @server.route("/")
 def webhook():
     bot.remove_webhook()
     bot.set_webhook(url='https://akhilpdisk.herokuapp.com/' + "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4")
     return "!", 200
-
+ 
 if __name__ == "__main__":
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
