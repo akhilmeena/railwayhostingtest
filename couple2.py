@@ -14,10 +14,10 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 from random import sample
-from config import config
+from config import Config
 
 
-#TOKEN = config.BOT_TOKEN
+#TOKEN = Config.BOT_TOKEN
 TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
@@ -28,7 +28,7 @@ scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/aut
 creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scope)
 client = gspread.authorize(creds)
 ak = client.open("pdiskv2")
-sheet1 = ak.worksheet(config.SEETA)
+sheet1 = ak.worksheet(Config.SEETA)
  
 user_dict = {}
 class User:
@@ -126,7 +126,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://' + config.app + '.herokuapp.com/' + f"{TOKEN}")
+    bot.set_webhook(url='https://' + Config.app + '.herokuapp.com/' + f"{TOKEN}")
     return "!", 200
  
 if __name__ == "__main__":
