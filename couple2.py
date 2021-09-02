@@ -14,22 +14,21 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 from random import sample
+import config
 
-#SHEETA = "data1"
-#app = "akhilpdisk"
+
 #TOKEN = config.BOT_TOKEN
-TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
-bot = telebot.TeleBot(token=TOKEN)
+#TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
+bot = telebot.TeleBot(token=config.TOKEN)
 server = Flask(__name__)
 
-#chnlid = "1551862526"
-#CHANNEL_ID="-1001551862526"# + chnlid
+
 
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scope)
 client = gspread.authorize(creds)
 ak = client.open("pdiskv2")
-sheet1 = ak.worksheet("data1")
+sheet1 = ak.worksheet(config.SEETA)
  
 user_dict = {}
 class User:
@@ -127,7 +126,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://akhilpdisk.herokuapp.com/' + "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4")
+    bot.set_webhook(url='https://akhilpdisk.herokuapp.com/' + config.TOKEN)
     return "!", 200
  
 if __name__ == "__main__":
