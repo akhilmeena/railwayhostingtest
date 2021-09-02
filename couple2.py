@@ -16,6 +16,8 @@ import random
 from random import sample
 import config
 
+#SHEETA = "data1"
+#app = "akhilpdisk"
 #TOKEN = config.BOT_TOKEN
 TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
 bot = telebot.TeleBot(token=TOKEN)
@@ -26,7 +28,7 @@ scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/aut
 creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scope)
 client = gspread.authorize(creds)
 ak = client.open("pdiskv2")
-sheet1 = ak.worksheet(config.SHEETA)
+sheet1 = ak.worksheet("data1")
 
 #chnlid = "1551862526"
 CHANNEL_ID="-1001551862526"# + chnlid
