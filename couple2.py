@@ -22,7 +22,7 @@ TOKEN = Config.BOT_TOKEN
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
 
-
+authid = [818396979]
 
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scope)
@@ -43,6 +43,12 @@ def test(m):
  
 @bot.message_handler(func=lambda message:True, content_types=['photo'])
 def command_default(m):
+  if f"{m.chat.id}" not in authid:
+    bot.send_message(m.chat.id,text="Bot is Offline")
+    break
+  else:
+    print("correct admin")
+    continue
   photo_id = m.photo[-1].file_id
   tt = m.caption
   User.pic = photo_id
