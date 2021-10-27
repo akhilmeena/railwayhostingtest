@@ -45,28 +45,28 @@ def test(m):
 def command_default(m):
   if f"{m.chat.id}" not in authid:
     bot.send_message(m.chat.id,text="Bot is Offline")
-    break
+    #break
   else:
     print("correct admin")
-    continue
-  photo_id = m.photo[-1].file_id
-  tt = m.caption
-  User.pic = photo_id
-  bot.send_message(m.chat.id,text="send now pdisk Title")
-  kya=""
-  tag_split = tt.splitlines()
-  for each_cn in tag_split:
-    new_cn = each_cn.strip()
-    myre = '^(http|https)://'
-    if re.search(myre,f"{each_cn}"):
-      kya+=f"\n{new_cn}"
-    else:
-      kya+=f"\n<code>{new_cn}</code>"
-  myString = f"{tt}"
-  #linkkksss = re.search("(?P<url>https?://[^\s]+)", myString).group("url")
-  linkkksss = re.findall(r'(https?://\S+)', myString)
-  m = bot.send_message(m.chat.id,text=f"{kya}\n\n\n\n{linkkksss}",parse_mode="html")
-  bot.register_next_step_handler(m, channel1)
+    #continue
+    photo_id = m.photo[-1].file_id
+    tt = m.caption
+    User.pic = photo_id
+    bot.send_message(m.chat.id,text="send now pdisk Title")
+    kya=""
+    tag_split = tt.splitlines()
+    for each_cn in tag_split:
+      new_cn = each_cn.strip()
+      myre = '^(http|https)://'
+      if re.search(myre,f"{each_cn}"):
+        kya+=f"\n{new_cn}"
+      else:
+        kya+=f"\n<code>{new_cn}</code>"
+    myString = f"{tt}"
+    #linkkksss = re.search("(?P<url>https?://[^\s]+)", myString).group("url")
+    linkkksss = re.findall(r'(https?://\S+)', myString)
+    m = bot.send_message(m.chat.id,text=f"{kya}\n\n\n\n{linkkksss}",parse_mode="html")
+    bot.register_next_step_handler(m, channel1)
  
  
 def channel1(m):
