@@ -51,9 +51,9 @@ def akhil(m):
     CurrentTime=datetime.now(ist1)
     minute1 = int(CurrentTime.strftime("%M"))
     #seconds1 = int(CurrentTime.strftime("%S"))
-    if int(minute1)%30 == 0:
+    if int(minute1)%19 == 0:
       r = requests.get("https://akhilmeen.herokuapp.com/")
-      print(r.status_code)
+      bot.send_message(m.chat.id,text= f"{r.status_code}")
       time.sleep(60)
     else:
       continue
