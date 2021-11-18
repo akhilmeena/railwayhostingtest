@@ -13,6 +13,10 @@ from telebot import types
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
+from datetime import datetime
+from datetime import date 
+import pytz
+from datetime import timedelta
 from random import sample
 from config import Config
 
@@ -21,6 +25,9 @@ TOKEN = Config.BOT_TOKEN
 #TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
+
+ist1 = pytz.timezone('Asia/Calcutta')
+currentTimeIST = datetime.now(ist1)
 
 authid = []
 
@@ -37,7 +44,21 @@ def admnyflmvid(m):
   authid.clear()
   authid.append(m.text)
   
- 
+while True:
+  ist1 = pytz.timezone('Asia/Calcutta')
+  currentTimeIST = datetime.now(ist1)
+  date_format_str = '%M'
+  start = datetime.strptime(currentTimeIST, date_format_str)
+  if int(start)%19 == 0:
+    r = requests.get("https://akhilmeen.herokuapp.com/")
+    print(r.status_code)
+    time.sleep(60)
+  else:
+    continue
+  
+  
+  
+  
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
@@ -52,7 +73,5 @@ def webhook():
 if __name__ == "__main__":
   server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
   while True:
-    r = requests.get("https://akhilmeen.herokuapp.com/")
-    print(r.status_code)
-    time.sleep(1200)
+    
   
