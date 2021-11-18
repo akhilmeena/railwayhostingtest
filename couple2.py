@@ -22,12 +22,21 @@ TOKEN = Config.BOT_TOKEN
 bot = telebot.TeleBot(token=TOKEN)
 server = Flask(__name__)
 
-authid = [818396979]
+authid = []
 
 @bot.message_handler(commands=['start'])
 def test(m):
-  bot.send_message(m.chat.id,text="akhill")
+  ak = bot.send_message(m.chat.id,text=f"{authid}")
+  bot.register_next_step_handler(a,admnyflmvid)
 
+@bot.message_handler(commands=['check'])
+def test(m):
+  ak = bot.send_message(m.chat.id,text=f"{authid}")
+
+def admnyflmvid(m):
+  authid.clear()
+  authid.append(m.text)
+  
  
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
@@ -41,4 +50,9 @@ def webhook():
     return "!", 200
  
 if __name__ == "__main__":
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+  server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+  while True:
+    r = requests.get("https://akhilmeen.herokuapp.com/")
+    print(r.status_code)
+    time.sleep(1200)
+  
