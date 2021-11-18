@@ -1,7 +1,7 @@
 import os
 class Config:
-    BOT_TOKEN = "1902307802:AAG0D1WZSDVCzWWsMzwSAXJq_1-O9MDsNA4"
+    BOT_TOKEN = "2082563900:AAFwQAC18LLd6epcDfI3BBrAlUswtp8v01M"
     SHEETA = "data1"
-    app = "akhilpdisk1"
+    app = "akhilmeen"
     chnlid = "1551862526"
     CHANNEL_ID="-100" + chnlid
