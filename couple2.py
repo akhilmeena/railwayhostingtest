@@ -48,7 +48,7 @@ while True:
   ist1 = pytz.timezone('Asia/Calcutta')
   currentTimeIST = datetime.now(ist1)
   date_format_str = '%M'
-  start = datetime.strptime(currentTimeIST, date_format_str)
+  start = datetime.strptime(str(currentTimeIST), date_format_str)
   if int(start)%19 == 0:
     r = requests.get("https://akhilmeen.herokuapp.com/")
     print(r.status_code)
