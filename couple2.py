@@ -44,17 +44,19 @@ def admnyflmvid(m):
   authid.clear()
   authid.append(m.text)
   
-while True:
-  ist1 = pytz.timezone('Asia/Calcutta')
-  CurrentTime=datetime.now(ist1)
-  minute1 = int(CurrentTime.strftime("%M"))
-  #seconds1 = int(CurrentTime.strftime("%S"))
-  if int(minute1)%26 == 0:
-    r = requests.get("https://akhilmeen.herokuapp.com/")
-    print(r.status_code)
-    time.sleep(60)
-  else:
-    continue
+@bot.message_handler(commands=['python'])
+def akhil(m):
+  while True:
+    ist1 = pytz.timezone('Asia/Calcutta')
+    CurrentTime=datetime.now(ist1)
+    minute1 = int(CurrentTime.strftime("%M"))
+    #seconds1 = int(CurrentTime.strftime("%S"))
+    if int(minute1)%30 == 0:
+      r = requests.get("https://akhilmeen.herokuapp.com/")
+      print(r.status_code)
+      time.sleep(60)
+    else:
+      continue
   
   
   
