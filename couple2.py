@@ -27,7 +27,7 @@ authid = []
 @bot.message_handler(commands=['start'])
 def test(m):
   ak = bot.send_message(m.chat.id,text=f"{authid}")
-  bot.register_next_step_handler(a,admnyflmvid)
+  bot.register_next_step_handler(ak,admnyflmvid)
 
 @bot.message_handler(commands=['check'])
 def test(m):
